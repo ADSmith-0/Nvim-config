@@ -41,14 +41,11 @@ local plugins = {
       {'L3MON4D3/LuaSnip'},     -- Required
     }
   },
-  -- {
-  --   "leafgarland/typescript-vim"
-  -- },
-  -- {
-  --   "peitalin/vim-jsx-typescript"
-  -- }
   {
     'HiPhish/rainbow-delimiters.nvim',
+  },
+  {
+    'm4xshen/autoclose.nvim'
   }
 }
 require("lazy").setup(plugins)
@@ -58,3 +55,4 @@ require("config-1.lualine")
 require("config-1.comment")
 require("config-1.colorizer")
 require("config-1.rainbow-delimiters")
+require("config-1.autoclose")
