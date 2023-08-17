@@ -11,8 +11,6 @@ local plugins = {
 		build = ":TSUpdate",
 	},
 	{
-		--'navarasu/onedark.nvim',
-    --"folke/tokyonight.nvim",
     "olimorris/onedarkpro.nvim",
 	},
 	{
@@ -46,7 +44,10 @@ local plugins = {
   },
   {
     'm4xshen/autoclose.nvim'
-  }
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+  },
 }
 require("lazy").setup(plugins)
 require("config-1.lsp-zero")
@@ -56,3 +57,4 @@ require("config-1.comment")
 require("config-1.colorizer")
 require("config-1.rainbow-delimiters")
 require("config-1.autoclose")
+require("config-1.indent-blankline")
