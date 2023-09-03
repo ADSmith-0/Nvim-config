@@ -48,10 +48,19 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  }
 }
 require("lazy").setup(plugins)
-require("config-1.lsp-zero")
 require("config-1.theme")
+require("config-1.nvim-tree")
+require("config-1.lsp-zero")
 require("config-1.lualine")
 require("config-1.comment")
 require("config-1.colorizer")
