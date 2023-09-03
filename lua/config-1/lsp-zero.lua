@@ -17,7 +17,11 @@ local cmp = require("cmp")
 cmp.setup({
   mapping = {
     ['<Tab>'] = cmp.mapping.confirm({ select = false })
-  }
+  },
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
 })
 
 lsp.set_sign_icons({
