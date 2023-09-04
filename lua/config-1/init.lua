@@ -71,10 +71,14 @@ local plugins = {
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
+  {
+    'mbbill/undotree'
+  }
 }
 require("lazy").setup(plugins)
 require("config-1.theme")
 require("config-1.nvim-tree")
+require("config-1.undotree")
 require("config-1.lsp-zero")
 require("config-1.lualine")
 require("config-1.comment")
