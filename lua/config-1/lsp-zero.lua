@@ -9,8 +9,6 @@ end)
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
-lsp.setup()
-
 local cmp = require("cmp")
 -- local cmp_action = require("lsp-zero").cmp_action()
 
@@ -25,8 +23,10 @@ cmp.setup({
 })
 
 lsp.set_sign_icons({
-  error = "❌",
-  warn = "❕",
-  hint = "💡",
-  info = "I",
+  error = "",
+  warn = "",
+  hint = "",
+  info = "",
 })
+
+lsp.setup()
