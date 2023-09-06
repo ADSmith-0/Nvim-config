@@ -35,3 +35,6 @@ vim.keymap.set("v", "(", "c()<Esc>hp")
 vim.keymap.set("v", "[", "c[]<Esc>hp")
 vim.keymap.set("n", "\"", "mZbi\"<Esc>ea\"<Esc>`Z")
 vim.keymap.set("n", "<leader>\"", "mZF\"xf\"x`Z")
+
+-- Buffer keybindings
+vim.keymap.set("n", "<leader>x", ":bw")
