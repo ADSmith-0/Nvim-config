@@ -1,3 +1,4 @@
+## TODO
 - [ ] Rebind buffers keys
     - [ ] <Tab> and <S-Tab> for cycling through instead of <A-.> and <A-,>
     - [ ] :bw -> <leader>x
