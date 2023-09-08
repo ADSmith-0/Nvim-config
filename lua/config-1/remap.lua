@@ -2,8 +2,6 @@ vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("x", "<C-_>", "gc", { remap = true })
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
-vim.keymap.set("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", { remap = true })
-vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", { remap = true })
 
 -- Move code in visual mode with J and K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
