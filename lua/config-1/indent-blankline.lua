@@ -6,8 +6,4 @@
 --   vim.api.nvim_set_hl(0, name, { fg = theme_colors.darken(color, 25, "onedark") })
 --   table.insert(hl_list, name);
 -- end
-require("indent_blankline").setup({
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
-})
+require("ibl").setup()
