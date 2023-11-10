@@ -9,7 +9,7 @@
 
 - [ ] Install Fugitive and setup keybinds
 
-- [ ] Install gitsigns and setup keybinds
+- [x] Install gitsigns and setup keybinds
 
 - [ ] Add stored history to Undotree
 
