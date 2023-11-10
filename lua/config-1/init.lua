@@ -4,7 +4,7 @@ require("config-1.lazy")
 local plugins = {
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.2',
+    tag = '0.1.4',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
