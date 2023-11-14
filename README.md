@@ -31,7 +31,8 @@
 `gi` - Lists all the implementations for the symbol under the cursor in the quickfix window
 `gr` - Lists all the references to the symbol under the cursor in the quickfix window
 `F2` - Rename the variable under your cursor
-`F3` - Format the text if you have a formatter attached
+`F3 or <leader>fo` - Format the text if you have a formatter attached
+`F4 or <leader>ca` - Perform a code action
 
 ## NvimTree
 `<leader>e` - Open/Close the file explorer
