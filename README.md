@@ -49,4 +49,4 @@
 - `<leader>gf` - Find git files
 
 ## UndoTree
-`<leader>u` - Open undotree
+- `<leader>u` - Open undotree
