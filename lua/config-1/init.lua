@@ -73,7 +73,14 @@ local plugins = {
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
   {
-    'mbbill/undotree'
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        --config
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   },
   {
     'christoomey/vim-tmux-navigator'
@@ -82,7 +89,6 @@ local plugins = {
 require("lazy").setup(plugins)
 require("config-1.theme")
 require("config-1.nvim-tree")
-require("config-1.undotree")
 require("config-1.lsp-zero")
 require("config-1.lualine")
 require("config-1.comment")
