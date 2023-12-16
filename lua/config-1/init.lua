@@ -44,6 +44,16 @@ local plugins = {
     'HiPhish/rainbow-delimiters.nvim',
   },
   {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        --config
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
       indent = {
@@ -59,6 +69,7 @@ local plugins = {
           "help",
           "alpha",
           "dashboard",
+          "NvimTree",
           "Trouble",
           "trouble",
           "lazy",
@@ -93,16 +104,6 @@ local plugins = {
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
   {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        --config
-      }
-    end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-  },
-  {
     'christoomey/vim-tmux-navigator'
   },
   {
@@ -125,8 +126,34 @@ local plugins = {
       "nvim-lua/plenary.nvim",
     },
   },
-  { 'echasnovski/mini.indentscope', version = '*' },
-  { 'echasnovski/mini.pairs',       version = '*' },
+  {
+    "echasnovski/mini.indentscope",
+    version = false, -- wait till new 0.7.0 release to put it back on semver
+    opts = {
+      -- symbol = "▏",
+      symbol = "│",
+      options = { try_as_border = true },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "help",
+          "alpha",
+          "dashboard",
+          "NvimTree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+        },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
+  },
+  { 'echasnovski/mini.pairs', version = '*' },
   {
     "RRethy/vim-illuminate",
     opts = {
@@ -162,7 +189,7 @@ local plugins = {
       { "[[", desc = "Prev Reference" },
     },
   },
-  { "tpope/vim-repeat", event = "VeryLazy" },
+  { "tpope/vim-repeat",       event = "VeryLazy" },
   {
     "ggandor/leap.nvim",
     enabled = true,
@@ -176,8 +203,6 @@ local plugins = {
         leap.opts[k] = v
       end
       leap.add_default_mappings(true)
-      -- vim.keymap.del({ "x", "o" }, "x")
-      -- vim.keymap.del({ "x", "o" }, "X")
     end,
   },
   {
