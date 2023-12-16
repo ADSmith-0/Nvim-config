@@ -161,6 +161,36 @@ local plugins = {
       { "]]", desc = "Next Reference" },
       { "[[", desc = "Prev Reference" },
     },
+  },
+  { "tpope/vim-repeat", event = "VeryLazy" },
+  {
+    "ggandor/leap.nvim",
+    enabled = true,
+    keys = {
+      { "<leader>s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
+      { "<leader>S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
+    },
+    config = function(_, opts)
+      local leap = require("leap")
+      for k, v in pairs(opts) do
+        leap.opts[k] = v
+      end
+      leap.add_default_mappings(true)
+      -- vim.keymap.del({ "x", "o" }, "x")
+      -- vim.keymap.del({ "x", "o" }, "X")
+    end,
+  },
+  {
+    "ggandor/flit.nvim",
+    enabled = true,
+    keys = function()
+      local ret = {}
+      for _, key in ipairs({ "f", "F", "t", "T" }) do
+        ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
+      end
+      return ret
+    end,
+    opts = { labeled_modes = "nx" },
   }
 }
 require("lazy").setup(plugins)
@@ -177,3 +207,4 @@ require("config-1.gitsigns")
 require("config-1.autocmd")
 require("config-1.mini-indentscope")
 require("config-1.mini-pairs")
+require("config-1.leap")
