@@ -44,9 +44,6 @@ local plugins = {
     'HiPhish/rainbow-delimiters.nvim',
   },
   {
-    'm4xshen/autoclose.nvim'
-  },
-  {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
       indent = {
@@ -128,6 +125,7 @@ local plugins = {
       "nvim-lua/plenary.nvim",
     },
   },
+  { 'echasnovski/mini.pairs',       version = '*' },
 }
 require("lazy").setup(plugins)
 require("config-1.theme")
@@ -138,7 +136,7 @@ require("config-1.comment")
 require("config-1.barbar")
 require("config-1.colorizer")
 require("config-1.rainbow-delimiters")
-require("config-1.autoclose")
 require("config-1.indent-blankline")
 require("config-1.gitsigns")
 require("config-1.autocmd")
+require("config-1.mini-pairs")
