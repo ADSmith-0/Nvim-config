@@ -48,6 +48,29 @@ local plugins = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      indent = {
+        char = "│",
+        tab_char = "│",
+      },
+      scope = { enabled = false },
+      exclude = {
+        buftypes = {
+          "terminal"
+        },
+        filetypes = {
+          "help",
+          "alpha",
+          "dashboard",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+        },
+      },
+    },
+    main = "ibl",
   },
   {
     "nvim-tree/nvim-tree.lua",
