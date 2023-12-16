@@ -125,6 +125,7 @@ local plugins = {
       "nvim-lua/plenary.nvim",
     },
   },
+  { 'echasnovski/mini.indentscope', version = '*' },
   { 'echasnovski/mini.pairs',       version = '*' },
 }
 require("lazy").setup(plugins)
@@ -139,4 +140,5 @@ require("config-1.rainbow-delimiters")
 require("config-1.indent-blankline")
 require("config-1.gitsigns")
 require("config-1.autocmd")
+require("config-1.mini-indentscope")
 require("config-1.mini-pairs")
