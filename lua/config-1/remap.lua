@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
--- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("x", "<C-_>", "gc", { remap = true })
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
 
@@ -33,6 +32,3 @@ vim.keymap.set("v", "(", "c()<Esc>hp")
 vim.keymap.set("v", "[", "c[]<Esc>hp")
 vim.keymap.set("n", "\"", "mZbi\"<Esc>ea\"<Esc>`Z")
 vim.keymap.set("n", "<leader>\"", "mZF\"xf\"x`Z")
-
--- Buffer keybindings
-vim.keymap.set("n", "<leader>x", ":bw")
