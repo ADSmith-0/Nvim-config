@@ -35,3 +35,7 @@ vim.keymap.set("n", "<leader>\"", "mZF\"xf\"x`Z")
 
 -- LazyGit
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
+
+-- Open config menus
+vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { silent = true, desc = "Open Lazy" })
+vim.keymap.set("n", "<leader>cm", "<cmd>Mason<CR>", { silent = true, desc = "Open mason" })
