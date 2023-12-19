@@ -1,13 +1,4 @@
-## TODO
-- [x] Rebind buffers keys
-    - [x] \<Tab\> and \<S-Tab\> for cycling through instead of \<A-.\> and \<A-,\>
-    - [x] :bw -> \<leader\>x
-    - [x] \<C-.\> for opening and closing the NvimTree to \<C-|\> or \<leader\>e
-    - [x] Change \<F3\>(format) to maybe \<leader\>fo and \<F4\> to \<C-.\> 
-
-- [x] Install Lazygit
-
-- [x] Install gitsigns and setup keybinds
+# TODO
 
 - [ ] Add stored history to Undotree
 
