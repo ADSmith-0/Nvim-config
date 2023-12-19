@@ -27,9 +27,9 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Toggle quotes in visual mode
 vim.keymap.set("v", "\"", "c\"\"<Esc>hp")
-vim.keymap.set("v", "{", "c{}<Esc>hp")
-vim.keymap.set("v", "(", "c()<Esc>hp")
-vim.keymap.set("v", "[", "c[]<Esc>hp")
+vim.keymap.set("v", "{", "c{}<Esc><Left>p")
+vim.keymap.set("v", "(", "c()<Esc><Left>p")
+vim.keymap.set("v", "[", "c[]<Esc><Left>p")
 vim.keymap.set("n", "\"", "mZbi\"<Esc>ea\"<Esc>`Z")
 vim.keymap.set("n", "<leader>\"", "mZF\"xf\"x`Z")
 
