@@ -3,9 +3,9 @@ require("config-1.set")
 require("config-1.lazy")
 local plugins = {
   {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.4',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.4",
+    dependencies = { "nvim-lua/plenary.nvim" }
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -15,43 +15,49 @@ local plugins = {
     "olimorris/onedarkpro.nvim",
   },
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" }
   },
   {
-    'NvChad/nvim-colorizer.lua'
+    "NvChad/nvim-colorizer.lua"
   },
   {
-    'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
     lazy = false,
   },
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v2.x",
     dependencies = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },             -- Required
-      { 'williamboman/mason.nvim' },           -- Optional
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      { "neovim/nvim-lspconfig" },             -- Required
+      { "williamboman/mason.nvim" },           -- Optional
+      { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
+      { "hrsh7th/nvim-cmp" },     -- Required
+      { "hrsh7th/cmp-nvim-lsp" }, -- Required
+      {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+      }, -- Required
     }
   },
   {
-    'HiPhish/rainbow-delimiters.nvim',
+    "HiPhish/rainbow-delimiters.nvim",
   },
   {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
     config = function()
-      require('dashboard').setup {
+      require("dashboard").setup {
         --config
       }
     end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    dependencies = { { "nvim-tree/nvim-web-devicons" } }
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -89,10 +95,10 @@ local plugins = {
     },
   },
   {
-    'romgrk/barbar.nvim',
+    "romgrk/barbar.nvim",
     dependencies = {
-      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+      "lewis6991/gitsigns.nvim",     -- OPTIONAL: for git status
+      "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
     opts = {
@@ -101,10 +107,10 @@ local plugins = {
       -- insert_at_start = true,
       -- …etc.
     },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    version = "^1.0.0", -- optional: only update when a new 1.x version is released
   },
   {
-    'christoomey/vim-tmux-navigator'
+    "christoomey/vim-tmux-navigator"
   },
   {
     "folke/which-key.nvim",
@@ -153,7 +159,7 @@ local plugins = {
       })
     end,
   },
-  { 'echasnovski/mini.pairs', version = '*' },
+  { "echasnovski/mini.pairs", version = "*" },
   {
     "RRethy/vim-illuminate",
     opts = {
