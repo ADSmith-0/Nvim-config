@@ -205,6 +205,10 @@ local plugins = {
       return ret
     end,
     opts = { labeled_modes = "nx" },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
   }
 }
 require("lazy").setup(plugins)
@@ -222,3 +226,4 @@ require("config-1.autocmd")
 require("config-1.mini-indentscope")
 require("config-1.mini-pairs")
 require("config-1.leap")
+require("config-1.todo-comments")

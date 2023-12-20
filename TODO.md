@@ -4,7 +4,7 @@
 
 - [ ] Work out how to save a session so I don't have to keep reopening files every time
 
-- [ ] Sort TODOComments plugin, search is not working
+- [x] Sort TODOComments plugin, search is not working
 
 - [ ] Sort Tmux sessionizer
 
