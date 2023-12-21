@@ -39,7 +39,7 @@ map('n', '<leader>T', '<Cmd>BufferRestore<CR>', GetOptsWithDesc("Reopen last buf
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 -- Magic buffer-picking mode
-map('n', '<C-p>', '<Cmd>BufferPick<CR>', GetOptsWithDesc("Pick buffer"))
+map('n', '<C-P>', '<Cmd>BufferPick<CR>', GetOptsWithDesc("Pick buffer"))
 -- Sort automatically by...
 map('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>', GetOptsWithDesc("Order buffers by buffer number"))
 map('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>', GetOptsWithDesc("Order buffers by directory"))

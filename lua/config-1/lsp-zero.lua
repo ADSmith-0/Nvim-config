@@ -7,21 +7,48 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+
+local lsp = require("lsp-zero")
+lsp.preset("recommended")
+
+local ls = require("luasnip")
 
 local cmp = require("cmp")
-local cmp_action = require("lsp-zero").cmp_action()
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ["<C-n>"] = cmp.mapping(function(fallback)
+    local col = vim.fn.col(".") - 1
 
-cmp.setup({
-  mapping = {
-    ["<Tab>"] = cmp.mapping.confirm({ select = false }),
-    ["<C-k>"] = cmp_action.luasnip_jump_forward(),
-    ["<C-j>"] = cmp_action.luasnip_jump_backward(),
-  },
-  preselect = 'item',
+    if ls.expand_or_jumpable() then
+      ls.expand_or_jump()
+    elseif cmp.visible() then
+      cmp.select_next_item()
+    elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
+      cmp.complete()
+    else
+      fallback()
+    end
+  end, { "i", "s" }),
+
+  ["<C-p>"] = cmp.mapping(function(fallback)
+    if ls.jumpable(-1) then
+      ls.jump(-1)
+    elseif cmp.visible() then
+      cmp.select_prev_item()
+    else
+      fallback()
+    end
+  end, { "i", "s" }),
+
+  ["<Tab>"] = cmp.mapping.confirm({ select = false })
+})
+
+lsp.setup_nvim_cmp({
+  preselect = "item",
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = "menu,menuone,noinsert"
   },
+  mapping = cmp_mappings,
 })
 
 lsp.set_sign_icons({
@@ -30,6 +57,8 @@ lsp.set_sign_icons({
   hint = "",
   info = "",
 })
+
+lsp.setup()
 
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "LSP actions",
@@ -59,5 +88,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", GetOptsWithDesc("Go to next error"))
   end
 });
-
-lsp.setup()

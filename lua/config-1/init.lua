@@ -37,6 +37,9 @@ local plugins = {
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
+    keys = function()
+      return {}
+    end
   }, -- Required
   {
     "HiPhish/rainbow-delimiters.nvim",
