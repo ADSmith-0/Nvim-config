@@ -1,4 +1,4 @@
-local lsp = require('lsp-zero').preset({})
+local lsp = require("lsp-zero").preset({})
 
 lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", GetOptsWithDesc("Get type definition"))
     vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", GetOptsWithDesc("Find references for symbol"))
     vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", GetOptsWithDesc("Signature help"))
-    vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", GetOptsWithDesc("Rename symbol"))
+    vim.keymap.set("n", "<leader>rs", "<cmd>lua vim.lsp.buf.rename()<cr>", GetOptsWithDesc("Rename symbol"))
     vim.keymap.set({ "n", "x" }, "<leader>fo", "<cmd>lua vim.lsp.buf.format({async = true})<cr>",
       GetOptsWithDesc("Format buffer"))
     vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>",
