@@ -10,11 +10,13 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 local cmp = require("cmp")
--- local cmp_action = require("lsp-zero").cmp_action()
+local cmp_action = require("lsp-zero").cmp_action()
 
 cmp.setup({
   mapping = {
-    ['<Tab>'] = cmp.mapping.confirm({ select = false })
+    ["<Tab>"] = cmp.mapping.confirm({ select = false }),
+    ["<C-k>"] = cmp_action.luasnip_jump_forward(),
+    ["<C-j>"] = cmp_action.luasnip_jump_backward(),
   },
   preselect = 'item',
   completion = {

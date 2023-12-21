@@ -10,8 +10,12 @@
 
 - [ ] Add Telescope fzf native
 
+- [x] Fix snippets keybindings
+
+- [ ] Sort snippets
+
 - [ ] Fix dashboard tab lines
 
-- [ ] Fix animation tab lines
+- [ ] Fix animation tab lines - can be fixed but looks worse imo, take out indentscope setup
 
 - [ ] Fix dashboard key binds and options

@@ -25,27 +25,19 @@ local plugins = {
     "numToStr/Comment.nvim",
     lazy = false,
   },
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+  { "VonHeikemen/lsp-zero.nvim",        branch = "v3.x" },
+  { "neovim/nvim-lspconfig" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/nvim-cmp" },
   {
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v2.x",
-    dependencies = {
-      -- LSP Support
-      { "neovim/nvim-lspconfig" },             -- Required
-      { "williamboman/mason.nvim" },           -- Optional
-      { "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-      -- Autocompletion
-      { "hrsh7th/nvim-cmp" },     -- Required
-      { "hrsh7th/cmp-nvim-lsp" }, -- Required
-      {
-        "L3MON4D3/LuaSnip",
-        -- follow latest release.
-        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!).
-        build = "make install_jsregexp"
-      }, -- Required
-    }
-  },
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+  }, -- Required
   {
     "HiPhish/rainbow-delimiters.nvim",
   },
@@ -221,6 +213,7 @@ require("lazy").setup(plugins)
 require("config-1.theme")
 require("config-1.nvim-tree")
 require("config-1.lsp-zero")
+require("config-1.luasnip")
 require("config-1.lualine")
 require("config-1.comment")
 require("config-1.barbar")
