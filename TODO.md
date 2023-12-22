@@ -8,7 +8,7 @@
 
 - [ ] Sort Tmux sessionizer
 
-- [ ] Add Telescope fzf native
+- [x] Add Telescope fzf native
 
 - [x] Fix snippets keybindings
 

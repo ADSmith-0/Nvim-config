@@ -2,10 +2,17 @@ require("config-1.remap")
 require("config-1.set")
 require("config-1.lazy")
 local plugins = {
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.4",
-    dependencies = { "nvim-lua/plenary.nvim" }
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -27,7 +34,7 @@ local plugins = {
   },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
-  { "VonHeikemen/lsp-zero.nvim",        branch = "v3.x" },
+  { "VonHeikemen/lsp-zero.nvim",                branch = "v3.x" },
   { "neovim/nvim-lspconfig" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/nvim-cmp" },
@@ -39,6 +46,9 @@ local plugins = {
     build = "make install_jsregexp",
     keys = function()
       return {}
+    end,
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
     end
   }, -- Required
   {
