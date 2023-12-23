@@ -14,8 +14,8 @@
 
 - [ ] Sort snippets
 
-- [ ] Fix dashboard tab lines
+- [x] Fix dashboard tab lines
 
-- [ ] Fix animation tab lines - can be fixed but looks worse imo, take out indentscope setup
+- [x] Fix animation tab lines - can be fixed but looks worse imo, take out indentscope setup
 
 - [ ] Fix dashboard key binds and options
