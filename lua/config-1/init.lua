@@ -66,29 +66,7 @@ local plugins = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      indent = {
-        char = "│",
-        tab_char = "│",
-      },
-      scope = { enabled = false },
-      exclude = {
-        buftypes = {
-          "terminal"
-        },
-        filetypes = {
-          "help",
-          "alpha",
-          "dashboard",
-          "NvimTree",
-          "Trouble",
-          "trouble",
-          "lazy",
-          "mason",
-          "notify",
-        },
-      },
-    },
+    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     main = "ibl",
   },
   {
@@ -140,9 +118,10 @@ local plugins = {
   {
     "echasnovski/mini.indentscope",
     version = false, -- wait till new 0.7.0 release to put it back on semver
+    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     opts = {
-      -- symbol = "▏",
       symbol = "│",
+      -- symbol = '╎',
       options = { try_as_border = true },
     },
     init = function()
@@ -233,9 +212,9 @@ require("config-1.barbar")
 require("config-1.colorizer")
 require("config-1.rainbow-delimiters")
 require("config-1.indent-blankline")
+require("config-1.mini-indentscope")
 require("config-1.gitsigns")
 require("config-1.autocmd")
-require("config-1.mini-indentscope")
 require("config-1.mini-pairs")
 require("config-1.leap")
 require("config-1.todo-comments")
