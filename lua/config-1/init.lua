@@ -212,7 +212,7 @@ require("config-1.barbar")
 require("config-1.colorizer")
 require("config-1.rainbow-delimiters")
 require("config-1.indent-blankline")
-require("config-1.mini-indentscope")
+require("config-1.mini-indentscope") -- NOTE: Comment this line out if you want a solid line
 require("config-1.gitsigns")
 require("config-1.autocmd")
 require("config-1.mini-pairs")
