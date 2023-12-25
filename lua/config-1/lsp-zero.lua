@@ -45,6 +45,16 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 lsp.setup_nvim_cmp({
   preselect = "item",
+  snippet = {
+    expand = function(args)
+      ls.lsp_expand(args.body)
+    end
+  },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+  },
   completion = {
     completeopt = "menu,menuone,noinsert"
   },

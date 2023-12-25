@@ -37,7 +37,6 @@ local plugins = {
   { "VonHeikemen/lsp-zero.nvim",                branch = "v3.x" },
   { "neovim/nvim-lspconfig" },
   { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/nvim-cmp" },
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
@@ -48,9 +47,11 @@ local plugins = {
       return {}
     end,
     config = function()
-      require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_lua").lazy_load()
     end
   }, -- Required
+  { "hrsh7th/nvim-cmp" },
+  { "saadparwaiz1/cmp_luasnip" },
   {
     "HiPhish/rainbow-delimiters.nvim",
   },
