@@ -18,11 +18,10 @@ local cmp = require("cmp")
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-n>"] = cmp.mapping(function(fallback)
     local col = vim.fn.col(".") - 1
-
-    if ls.expand_or_jumpable() then
-      ls.expand_or_jump()
-    elseif cmp.visible() then
+    if cmp.visible() then
       cmp.select_next_item()
+    elseif ls.expand_or_jumpable() then
+      ls.expand_or_jump()
     elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
       cmp.complete()
     else
@@ -31,10 +30,10 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   end, { "i", "s" }),
 
   ["<C-p>"] = cmp.mapping(function(fallback)
-    if ls.jumpable(-1) then
-      ls.jump(-1)
-    elseif cmp.visible() then
+    if cmp.visible() then
       cmp.select_prev_item()
+    elseif ls.jumpable(-1) then
+      ls.jump(-1)
     else
       fallback()
     end
