@@ -1,4 +1,6 @@
-local lsp = require("lsp-zero").preset({})
+local lsp = require("lsp-zero")
+local ls = require("luasnip")
+local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
 
 lsp.on_attach(function(client, bufnr)
@@ -7,23 +9,20 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({ buffer = bufnr })
 end)
 
--- (Optional) Configure lua language server for neovim
-require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-
-local lsp = require("lsp-zero")
-lsp.preset("recommended")
-
-local ls = require("luasnip")
-
-local cmp = require("cmp")
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ["<C-k>"] = cmp_action.luasnip_jump_forward(),
-  ["<C-j>"] = cmp_action.luasnip_jump_backward(),
-  ["<Tab>"] = cmp.mapping.confirm({ select = false })
+require("mason").setup({})
+require("mason-lspconfig").setup({
+  ensure_installed = { "tsserver" },
 })
 
-lsp.setup_nvim_cmp({
+-- (Optional) Configure lua language server for neovim
+require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+require("lspconfig").tsserver.setup({})
+
+cmp.setup({
   preselect = "item",
+  completion = {
+    completeopt = "menu,menuone,noinsert"
+  },
   snippet = {
     expand = function(args)
       ls.lsp_expand(args.body)
@@ -34,11 +33,32 @@ lsp.setup_nvim_cmp({
     { name = "luasnip" },
     { name = "buffer" },
   },
-  completion = {
-    completeopt = "menu,menuone,noinsert"
+  mapping = {
+    ["<C-k>"] = cmp_action.luasnip_jump_forward(),
+    ["<C-j>"] = cmp_action.luasnip_jump_backward(),
+    ["<Tab>"] = cmp.mapping.confirm({ select = false })
   },
-  mapping = cmp_mappings,
 })
+
+
+
+-- lsp.setup_nvim_cmp({
+--   preselect = "item",
+--   completion = {
+--     completeopt = "menu,menuone,noinsert"
+--   },
+--   snippet = {
+--     expand = function(args)
+--       ls.lsp_expand(args.body)
+--     end
+--   },
+--   sources = {
+--     { name = "nvim_lsp" },
+--     { name = "luasnip" },
+--     { name = "buffer" },
+--   },
+--   mapping = cmp_mappings,
+-- })
 
 lsp.set_sign_icons({
   error = "",
