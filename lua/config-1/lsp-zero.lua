@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero").preset({})
+local cmp_action = require("lsp-zero").cmp_action()
 
 lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
@@ -16,29 +17,8 @@ local ls = require("luasnip")
 
 local cmp = require("cmp")
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ["<C-n>"] = cmp.mapping(function(fallback)
-    local col = vim.fn.col(".") - 1
-    if cmp.visible() then
-      cmp.select_next_item()
-    elseif ls.expand_or_jumpable() then
-      ls.expand_or_jump()
-    elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-      cmp.complete()
-    else
-      fallback()
-    end
-  end, { "i", "s" }),
-
-  ["<C-p>"] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_prev_item()
-    elseif ls.jumpable(-1) then
-      ls.jump(-1)
-    else
-      fallback()
-    end
-  end, { "i", "s" }),
-
+  ["<C-k>"] = cmp_action.luasnip_jump_forward(),
+  ["<C-j>"] = cmp_action.luasnip_jump_backward(),
   ["<Tab>"] = cmp.mapping.confirm({ select = false })
 })
 
