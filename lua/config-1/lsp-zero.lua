@@ -86,7 +86,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", GetOptsWithDesc("Find references for symbol"))
     vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", GetOptsWithDesc("Signature help"))
     vim.keymap.set("n", "<leader>rs", "<cmd>lua vim.lsp.buf.rename()<cr>", GetOptsWithDesc("Rename symbol"))
-    vim.keymap.set({ "n", "x" }, "<leader>fo", "<cmd>lua vim.lsp.buf.format({async = true})<cr>",
+    vim.keymap.set({ "n", "x" }, "<leader>gf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>",
       GetOptsWithDesc("Format buffer"))
     vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>",
       { buffer = event.buf, remap = true, desc = "Code action" })
