@@ -46,7 +46,7 @@
 - `<leader>ff` - Find file
 - `<leader>fw` - Find word across files
 - `<leader>fb` - Find file within open buffers
-- `<leader>gf` - Find git files
+- `<leader>fg` - Find git files
 
 ## UndoTree
 - `<leader>u` - Open undotree
