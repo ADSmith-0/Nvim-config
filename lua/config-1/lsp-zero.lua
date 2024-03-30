@@ -39,26 +39,6 @@ cmp.setup({
   },
 })
 
-
-
--- lsp.setup_nvim_cmp({
---   preselect = "item",
---   completion = {
---     completeopt = "menu,menuone,noinsert"
---   },
---   snippet = {
---     expand = function(args)
---       ls.lsp_expand(args.body)
---     end
---   },
---   sources = {
---     { name = "nvim_lsp" },
---     { name = "luasnip" },
---     { name = "buffer" },
---   },
---   mapping = cmp_mappings,
--- })
-
 lsp.set_sign_icons({
   error = "",
   warn = "",
