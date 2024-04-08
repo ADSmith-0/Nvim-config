@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>\"", "mZF\"xf\"x`Z")
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
 
 -- Tmux sessionzier
-vim.keymap.set("n", "<leader>F", "<cmd>silent !tmux neww 'bash ~/tmux-sessionizer'<CR>", { desc = "Change tmux project" })
+vim.keymap.set("n", "<leader>F", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Change tmux project" })
 
 -- Refresh snippets
 vim.keymap.set("n", "<leader>sn", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>", { desc = "Reload snippets" })
