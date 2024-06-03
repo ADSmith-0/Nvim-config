@@ -21,7 +21,10 @@ ls.add_snippets("all", {
 })
 
 ls.add_snippets("typescriptreact", {
-  s("rfc",
+  s("rfce",
     fmt("const {} = () => {{\n\treturn (\n\t\t<div>{}</div>\n\t);\n}};\n\nexport default {};",
-      { dl(1, l.TM_FILENAME:gsub(".tsx", "")), rep(1), rep(1) }))
+      { dl(1, l.TM_FILENAME:gsub(".tsx", "")), rep(1), rep(1) })),
+  s("rfc",
+    fmt("export const {} = () => {{\n\treturn (\n\t\t<div>{}</div>\n\t);\n}};",
+      { dl(1, l.TM_FILENAME:gsub(".tsx", "")), rep(1) }))
 })
