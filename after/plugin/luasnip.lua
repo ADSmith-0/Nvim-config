@@ -11,6 +11,7 @@ local dl = extras.dynamic_lambda
 
 ls.add_snippets("all", {
   s("clg", fmt("console.log({});", { i(0) })),
+  s("cld", fmt("console.log(\"{}:\", {});", { i(1), rep(1) })),
   s("cdr", fmt("console.dir({});", { i(0) })),
   s("cer", fmt("console.err({});", { i(0) })),
   s("fna", fmt("const {} = ({}){} => {{\n\t{}\n}};", { i(1), i(2), i(3), i(0) })),
